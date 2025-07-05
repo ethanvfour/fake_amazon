@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Coffee Mug",
+    "price": 12.99,
+    "description": "A ceramic coffee mug with a modern design",
+    "image": "/images/coffee_mug.png"
+  },
+  {
+    "id": 2,
+    "name": "Wireless Headphones",
+    "price": 89.99,
+    "description": "Noise-cancelling wireless headphones with 30-hour battery life",
+    "image": "/images/wireless_headphones.png"
+  },
+  {
+    "id": 3,
+    "name": "Notebook",
+    "price": 4.99,
+    "description": "Hardcover notebook with 200 lined pages",
+    "image": "/images/notebook.png"
+  },
+  {
+    "id": 4,
+    "name": "Desk Lamp",
+    "price": 24.99,
+    "description": "Adjustable LED desk lamp with multiple brightness settings",
+    "image": "/images/desk_lamp.png"
+  },
+  {
+    "id": 5,
+    "name": "Water Bottle",
+    "price": 18.99,
+    "description": "Insulated stainless steel water bottle, keeps drinks cold for 24 hours",
+    "image": "/images/water_bottle.png"
+  },
+  {
+    "id": 6,
+    "name": "Bluetooth Speaker",
+    "price": 29.99,
+    "description": "Portable Bluetooth speaker with 10-hour battery life and waterproof design",
+    "image": "/images/bluetooth_speaker.png"
+  }
+]
