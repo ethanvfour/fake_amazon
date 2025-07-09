@@ -7,7 +7,7 @@ const loadItem = () =>
   let actualItem = document.getElementById("actualItem");
   actualItem.innerHTML = "";
   let domElements = [];
-
+  
   domElements.push(document.createElement("hr"));//hr
 
   domElements.push(document.createElement("h3"));//name
