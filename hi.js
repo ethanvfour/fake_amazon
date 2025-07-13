@@ -1,43 +1,17 @@
 let itemIndex = null;
 let items;
 
-
-const loadItem = () =>
-{
-  let actualItem = document.getElementById("actualItem");
-  actualItem.innerHTML = "";
-  let domElements = [];
-  
-  domElements.push(document.createElement("hr"));//hr
-
-  domElements.push(document.createElement("h3"));//name
-  domElements[domElements.length - 1].innerHTML = items[itemIndex].name;
-
-  domElements.push(document.createElement("img"));//img
-  domElements[domElements.length - 1].setAttribute("id", "imageOfItem");
-  domElements[domElements.length - 1].setAttribute("alt", items[itemIndex].name);
-  domElements[domElements.length - 1].setAttribute("src", items[itemIndex].image);
-  
-  domElements.push(document.createElement("h4"));//price
-  domElements[domElements.length - 1].innerHTML = "$" + items[itemIndex].price;
-
-  domElements.push(document.createElement("p"));//description
-  domElements[domElements.length - 1].innerHTML = items[itemIndex].description;
-
-  domElements.forEach((element) =>
-  {
-    actualItem.append(element);
-  });
-
+const loadItem = () => {
+  let LeftSide = document.getElementById("imgOfItem");
+  LeftSide.setAttribute("src", items[itemIndex].image);
 };
 
-
-
 const changeItem = (index) => {
-  if (itemIndex == index) return;//cuz whats the point of reloading the same item?
+  if (itemIndex == index) return; //cuz whats the point of reloading the same item?
   document.querySelectorAll("#actualLinks button")[itemIndex].style.color = "";
   itemIndex = index;
-  document.querySelectorAll("#actualLinks button")[itemIndex].style.color = "blue";
+  document.querySelectorAll("#actualLinks button")[itemIndex].style.color =
+    "blue";
   loadItem();
 };
 
@@ -76,14 +50,11 @@ async function loadPageWithNewItem() {
     .join("");
   document.getElementById("actualLinks").innerHTML = content;
 
-  document.querySelectorAll("#actualLinks button").forEach((button) =>
-  {
-    button.addEventListener("click", (btn)=>
-    {
+  document.querySelectorAll("#actualLinks button").forEach((button) => {
+    button.addEventListener("click", (btn) => {
       changeItem(Number(btn.target.dataset.index));
     });
-  })
-  
+  });
   loadItem();
 }
 
@@ -95,8 +66,4 @@ document.getElementById("logo").addEventListener("click", () => {
   location.reload();
 });
 
-
-
 loadPageWithNewItem();
-
-
