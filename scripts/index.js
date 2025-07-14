@@ -4,6 +4,12 @@ let items;
 const loadItem = () => {
   let LeftSide = document.getElementById("imgOfItem");
   LeftSide.setAttribute("src", items[itemIndex].image);
+
+  document.getElementById("name").textContent = items[itemIndex]["name"];
+  document.getElementById("price").textContent =
+    "$" + items[itemIndex]["price"];
+  document.getElementById("description").textContent =
+    items[itemIndex]["description"];
 };
 
 const changeItem = (index) => {
@@ -67,3 +73,36 @@ document.getElementById("logo").addEventListener("click", () => {
 });
 
 loadPageWithNewItem();
+
+document.getElementById("addToCart").addEventListener("click", () =>
+  //adding the button functionality
+  {
+    event.preventDefault();
+
+    let how_many = parseInt(document.getElementById("quantity").value);
+
+    if(how_many === NaN)
+    {
+      alert("Please enter a number");
+      return;
+    }
+
+    const cart =
+      localStorage.getItem("cart") === null
+        ? {}
+        : JSON.parse(localStorage.getItem("cart"));
+      
+    if(cart[items[itemIndex].name])
+    {
+      cart[items[itemIndex].name].quantity += how_many;
+    }
+    else
+    {
+      cart[items[itemIndex].name] = {
+        quantity : how_many,
+        actualItem : items[itemIndex],
+      };
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+);

@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Item</title> <!--to be added in the js-->
-    <script src="hi.js" defer></script>
+    <script src="/scripts/index.js" defer></script>
     <link href="styles.css" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <img id="logo" src="images/amazon.png" alt="amazon logo" />
-
     </header>
     <main>
         <nav id="side">
@@ -23,25 +22,31 @@
 
         <div id="actualItem">
             <div id="info">
-
-                <img id="imgOfItem"
-                    src="https://media.istockphoto.com/id/1338205187/vector/progress-bar-in-doodle-style-vector-illustration-hand-drawn-loading-symbol-black-isolated.jpg?s=612x612&w=0&k=20&c=UwZ1AEwu_7WMzKf5olLpGQBYWB67nb82xHuf1P87czA=">
+                <img id="imgOfItem" src="/images/loading.png">
             </div>
             <div id="buyAndAllat">
                 <h1 id="name"></h1>
-                <hr style="height: 1px;">
+                <hr style="height: 1px; align-self: normal;">
                 <h4 id="price"></h4>
-                <button id="addToCart"">Add to cart</button>
+                <p id="description"></p>
+                <form id="submission">
+                    <label for="quantity">Item quantity: </label>
+                    <input type="number" id="quantity" min="1" value="1"/>
+                    <button id="addToCart">Add to cart</button>
+                </form>
             </div>
+            
         </div>
         <br>
     </main>
     <footer>
 
         <p
-            style="display: flex; justify-content: center; font-family: 'Times New Roman', Times, serif; font-size: 2rem;">
-            fake amazon inc.</p>
+            style=" display: flex; justify-content: center; font-family: 'Times New Roman' , Times, serif; font-size:
+                    2rem;">
+                    fake amazon inc.</p>
     </footer>
+    <a href="cart.html"> hj</a>
 </body>
 
 </html>
